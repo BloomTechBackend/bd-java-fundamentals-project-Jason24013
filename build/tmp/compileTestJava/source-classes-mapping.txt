@@ -10,9 +10,9 @@ com/adventure/MT8.java
  com.adventure.MT8
 com/adventure/MT5.java
  com.adventure.MT5
-com/adventure/MT2.java
- com.adventure.MT2
 com/adventure/MT3.java
  com.adventure.MT3
 com/adventure/MT7.java
  com.adventure.MT7
+com/adventure/MT2.java
+ com.adventure.MT2
