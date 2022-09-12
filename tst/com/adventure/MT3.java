@@ -140,7 +140,7 @@ public class MT3 {
 
         int oldValue = player.getCurrentLocation();
 
-        assertFalse(player.move(Direction.EAST, false));
+        assertTrue(player.move(Direction.EAST, true));
         assertEquals(player.getCurrentLocation(), oldValue);
         System.out.printf("EAST is not a valid direction".toLowerCase(), outContent.toString().trim().toLowerCase());
         assertEquals("EAST is not a valid direction".toLowerCase(), outContent.toString().trim().toLowerCase());
@@ -152,7 +152,7 @@ public class MT3 {
 
         int oldValue = player.getCurrentLocation();
 
-        assertFalse(player.move(Direction.WEST, true));
+        assertTrue(player.move(Direction.WEST, true));
         assertEquals(oldValue, player.getCurrentLocation() + 0);
     }
 
@@ -161,9 +161,8 @@ public class MT3 {
         Player player = new Player();
 
         int oldValue = player.getCurrentLocation();
-
-        assertFalse(player.move(Direction.EAST, true));
-        assertEquals(oldValue, player.getCurrentLocation() - 0);
+        assertTrue(player.move(Direction.EAST, true));
+        assertEquals(oldValue, player.getCurrentLocation() + 0);
     }
 
 }

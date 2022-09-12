@@ -73,7 +73,7 @@ public class Player {
      * @return true if the move is executed. Otherwise, false.
      */
     public boolean move(String direction, boolean isValidDirection) {
-        return false;
+        return isValidDirection;
     }
 
     /**
