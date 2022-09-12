@@ -6,7 +6,7 @@ You can find instructions for each assignment by going to the Sprint Activities 
 
 You can run tests inside of IntelliJ by opening the desired test file and clicking on the run icon to the left of the code.
 
-![Testing within IntelliJ](https://github.com/bqmackay/bd_u1_student_project/blob/main/Instructions/Images/IDE_Test_Instructions.png)
+<img alt="Testing within IntelliJ" src="https://github.com/bqmackay/bd_u1_student_project/blob/main/Instructions/Images/IDE_Test_Instructions.png"/>
 
 You can also run tests in your terminal. Here's an example test command:
 

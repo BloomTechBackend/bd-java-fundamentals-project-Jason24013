@@ -7,23 +7,28 @@ import main.com.adventure.world.objects.Weapon;
 import main.com.adventure.world.objects.keys.Key;
 
 public class Player {
-
     public int level = 5;
     private int currentLocationIndex = AppSettings.getStartingLocation();
     private Key key;
     private Shovel shovel;
+
     private int power = 1;
     private int health = 10;
+    public String name = null;
+    public  String item = null;
 
     /**
      * Sprint 2 Module 1
      * Saves the player's name. This file should store the name so it can be referenced later. After setting the name,
      * inform the user that the name has been changed by saying "Your name is now {name}".
+     *
      * @param newName - the player's name that will be saved
      */
     public void setName(String newName) {
-
+    name = newName;
     }
+
+
 
     /**
      * Sprint 2 Module 1
@@ -32,7 +37,7 @@ public class Player {
      * @return The name of the player
      */
     public String getName() {
-        return "";
+        return name;
     }
 
     /**
@@ -68,7 +73,7 @@ public class Player {
      * @return true if the move is executed. Otherwise, false.
      */
     public boolean move(String direction, boolean isValidDirection) {
-        return true;
+        return false;
     }
 
     /**
@@ -79,6 +84,7 @@ public class Player {
      */
     public void setWeapon(Weapon item) {
         //TODO Complete this function in Sprint 3 Module 2
+        power = item.getPower();
     }
 
     /**
@@ -89,8 +95,12 @@ public class Player {
      */
     public Tangible getItem(String itemName) {
         //TODO Complete this function in Sprint 3 Module 3
+
         return null;
     }
+
+
+
 
     /**
      * Sprint 3 Module 3

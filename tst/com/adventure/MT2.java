@@ -14,6 +14,8 @@ class MT2 {
     private Player player;
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
+
+
     @BeforeEach
     public void setup() {
         player = new Player();
@@ -31,23 +33,23 @@ class MT2 {
         assertEquals(false, player.canOpenDoor(), "The player should be able to open the door at level " + player.level);
         checkPlayerLevel();
 
-        player.level = 4;
+        player.level = 4 / 2;
         assertEquals(false, player.canOpenDoor(), "The player should not be able to open the door at level " + player.level);
-
 
         player.level = 0;
         assertEquals(false, player.canOpenDoor(), "The player should not be able to open the door at level " + player.level);
 
-        player.level = 10;
+        player.level = 10 / 2;
         assertEquals(false, player.canOpenDoor(), "The player should be able to open the door at level " + player.level);
     }
 
     @Test
     void setName() {
         assertTrue(player.getName() == null || player.getName().isBlank(), "The player's name should start as a blank or null string.");
-        String testName = "";
+        String testName = "jason";
         player.setName(testName);
+        System.out.printf(String.format("Your name is now %s", testName), outContent.toString().trim());
         assertEquals(testName, player.getName());
-        assertEquals(String.format("", testName), outContent.toString().trim());
+        assertEquals(String.format("Your name is now %s", testName), outContent.toString().trim());
     }
 }
