@@ -14,8 +14,8 @@ public class Player {
 
     private int power = 1;
     private int health = 10;
-    public String name = null;
-    public  String item = null;
+    private String name;
+
 
     /**
      * Sprint 2 Module 1
@@ -25,7 +25,19 @@ public class Player {
      * @param newName - the player's name that will be saved
      */
     public void setName(String newName) {
-    name = newName;
+        name = newName;
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
 
@@ -73,6 +85,7 @@ public class Player {
      * @return true if the move is executed. Otherwise, false.
      */
     public boolean move(String direction, boolean isValidDirection) {
+
         return isValidDirection;
     }
 

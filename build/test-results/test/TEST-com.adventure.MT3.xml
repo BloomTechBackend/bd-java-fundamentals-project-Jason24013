@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.adventure.MT3" tests="10" skipped="0" failures="0" errors="0" timestamp="2022-09-12T15:45:45" hostname="jason-Z690-AORUS-ELITE-AX-DDR4" time="0.326">
+<testsuite name="com.adventure.MT3" tests="10" skipped="0" failures="0" errors="0" timestamp="2022-09-13T00:29:35" hostname="jason-Z690-AORUS-ELITE-AX-DDR4" time="0.32">
   <properties/>
   <testcase name="testPlayerMovementInvalid()" classname="com.adventure.MT3" time="0.021"/>
-  <testcase name="testPlayerMovementEast()" classname="com.adventure.MT3" time="0.001"/>
-  <testcase name="testPlayerMovementWest()" classname="com.adventure.MT3" time="0.001"/>
-  <testcase name="testInvalidMoveInput()" classname="com.adventure.MT3" time="0.285"/>
-  <testcase name="testPrompt2()" classname="com.adventure.MT3" time="0.003"/>
+  <testcase name="testPlayerMovementEast()" classname="com.adventure.MT3" time="0.0"/>
+  <testcase name="testPlayerMovementWest()" classname="com.adventure.MT3" time="0.0"/>
+  <testcase name="testInvalidMoveInput()" classname="com.adventure.MT3" time="0.28"/>
+  <testcase name="testPrompt2()" classname="com.adventure.MT3" time="0.002"/>
   <testcase name="checkMoveInputEast()" classname="com.adventure.MT3" time="0.001"/>
   <testcase name="checkMoveInputWest()" classname="com.adventure.MT3" time="0.001"/>
   <testcase name="testUseInput()" classname="com.adventure.MT3" time="0.006"/>

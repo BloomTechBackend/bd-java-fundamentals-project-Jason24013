@@ -1,20 +1,18 @@
 package main.com.adventure;
 
-import com.amazonaws.services.dynamodbv2.xspec.S;
 import main.com.adventure.settings.Command;
 import main.com.adventure.settings.CommandConstants;
 
-import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
 
 public class GameInputProcessor {
-String prompt;
     /**
      * Asks the user for their next command.
      * @return the response from the user.
      */
     public String prompt() {
+        String prompt;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your next command:");
         prompt = scanner.nextLine();
@@ -34,17 +32,16 @@ String prompt;
      * @return - the Command object with the proper verb and blank object
      */
     private Command buildSimpleCommand(String input) {
-        int firstword = input.indexOf(' ');
+        int index = input.indexOf(' ');
 
-        if (firstword >= 0) {
-            input = input.substring(0, firstword);
+        if (index > -1) {
+
+            return new Command(input.substring(0, index).trim());
 
         } else {
-            input = input;
-        }
-        input = input.trim();
 
-        return new Command(input);
+            return new Command(input);
+        }
     }
 
     /**
@@ -69,17 +66,16 @@ String prompt;
     private Command buildCommandWithObject(String input) {
         String item = "";
         item = input.substring(input.lastIndexOf(" ") + 1);
-    int firstword = input.indexOf(' ');
+        int index = input.indexOf(' ');
 
-    if (firstword >= 0) {
-        input = input.substring(0, firstword);
+        if (index > -1) {
 
-    } else {
-        input = input;
-    }
-    input = input.trim();
+            return new Command(input.substring(0, index).trim(), item);
 
-        return new Command(input, item);
+        } else {
+
+            return new Command(input, item);
+        }
     }
 
 
