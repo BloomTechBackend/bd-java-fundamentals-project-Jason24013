@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.adventure.MT3" tests="10" skipped="0" failures="0" errors="0" timestamp="2022-09-13T01:12:59" hostname="jason-Z690-AORUS-ELITE-AX-DDR4" time="0.314">
+  <properties/>
+  <testcase name="testPlayerMovementInvalid()" classname="com.adventure.MT3" time="0.014"/>
+  <testcase name="testPlayerMovementEast()" classname="com.adventure.MT3" time="0.001"/>
+  <testcase name="testPlayerMovementWest()" classname="com.adventure.MT3" time="0.0"/>
+  <testcase name="testInvalidMoveInput()" classname="com.adventure.MT3" time="0.285"/>
+  <testcase name="testPrompt2()" classname="com.adventure.MT3" time="0.003"/>
+  <testcase name="checkMoveInputEast()" classname="com.adventure.MT3" time="0.001"/>
+  <testcase name="checkMoveInputWest()" classname="com.adventure.MT3" time="0.001"/>
+  <testcase name="testUseInput()" classname="com.adventure.MT3" time="0.006"/>
+  <testcase name="checkSimpleInput()" classname="com.adventure.MT3" time="0.001"/>
+  <testcase name="testPrompt()" classname="com.adventure.MT3" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
