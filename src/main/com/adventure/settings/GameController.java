@@ -122,24 +122,37 @@ public class GameController {
     }
 
     private void applyCommand(Command command) {
-        if (command.getVerb().equalsIgnoreCase(CommandConstants.LOOK)) {
-            describeCurrentScene();
-        } else if (command.getVerb().equalsIgnoreCase(CommandConstants.MOVE)) {
-            move(command.getObjectName());
-        } else if (command.getVerb().equalsIgnoreCase(CommandConstants.HELP)) {
-            printHelp();
-        } else if (command.getVerb().equalsIgnoreCase(CommandConstants.USE)) {
-            use(command.getObjectName());
-        } else if (command.getVerb().equalsIgnoreCase(CommandConstants.DIG)) {
-            dig();
-        } else if (command.getVerb().equalsIgnoreCase(CommandConstants.EXAMINE)) {
-            examine(command.getObjectName());
-        } else if (command.getVerb().equalsIgnoreCase(CommandConstants.TAKE)) {
-            take(command.getObjectName());
-        } else {
-            printInvalidCommand();
+        CommandVerb commandVerb = CommandVerb.HELP;
+
+        switch (commandVerb) {
+            case TAKE:
+                break;
+            case MOVE:
+                break;
+            case USE:
+                break;
+            case DIG:
+                break;
+            case EXAMINE:
+                break;
+            case LOOK:
+                break;
+            case INVALID:
+                break;
+            case HELP:
+                break;
+            case FIGHT:
+                break;
+            case INVENTORY:
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + commandVerb);
         }
+
     }
+
+
+
 
     private void startCombat() {
         if (!(getCurrentScene() instanceof IMonsterScene)) {

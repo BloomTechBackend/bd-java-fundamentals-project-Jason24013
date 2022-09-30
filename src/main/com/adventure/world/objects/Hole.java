@@ -20,7 +20,7 @@ public class Hole {
      * @param content - the item that is covered by the hole.
      */
     public Hole(Key content) {
-key = content;
+        key = content;
     }
 
     public boolean isCovered() {

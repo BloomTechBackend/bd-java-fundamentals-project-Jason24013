@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.adventure.MT5" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-09-20T23:20:55" hostname="jason-Z690-AORUS-ELITE-AX-DDR4" time="0.025">
-  <properties/>
-  <testcase name="testScene()" classname="com.adventure.MT5" time="0.021"/>
-  <testcase name="testHole()" classname="com.adventure.MT5" time="0.002"/>
-  <system-out><![CDATA[Door is now open
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
