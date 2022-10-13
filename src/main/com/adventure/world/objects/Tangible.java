@@ -40,4 +40,5 @@ public interface Tangible {
      * Use the item by itself.
      */
     void use();
+
 }

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.adventure.MT6" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-09-30T02:33:36" hostname="jason-Z690-AORUS-ELITE-AX-DDR4" time="0.307">
-  <properties/>
-  <testcase name="testCommandHelp()" classname="com.adventure.MT6" time="0.303"/>
-  <testcase name="testCommandMove()" classname="com.adventure.MT6" time="0.001"/>
-  <testcase name="testCommandUse()" classname="com.adventure.MT6" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
