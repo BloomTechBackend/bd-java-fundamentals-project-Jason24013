@@ -1,7 +1,6 @@
 package main.com.adventure.player;
 
 import main.com.adventure.world.objects.Tangible;
-import org.apache.commons.lang3.ArrayUtils;
 
 
 
@@ -9,7 +8,7 @@ import org.apache.commons.lang3.ArrayUtils;
  * Stores any Tangible item up to the MAX_CAPACITY.
  */
 public class Backpack {
-     private static final int MAX_CAPACITY = 5;
+    private static final int MAX_CAPACITY = 5;
 
     private final Tangible[] items = new Tangible[MAX_CAPACITY];
 
@@ -23,15 +22,15 @@ public class Backpack {
     public boolean addItem(Tangible item) {
         //TODO Complete the function
 
-        for (int i = 0; i < items.length; i++) {
-        for (Tangible tangible : items) {
-            tangible = item;
-            items[i] = tangible;
-            tangible.useItem(item);
-            if (tangible.canUse(item)) {
-                return tangible.canTake();
+
+
+
+        for (int i = 0; i < this.items.length; i++) {
+            if (this.items[i] == null) {
+                this.items[i] = item;
+                return true;
             }
-        }}
+        }
         return false;
     }
 
@@ -42,19 +41,17 @@ public class Backpack {
      */
     public Tangible getItem(String name) {
         //TODO Complete the function
-        for (int i = 0; i < items.length; i++) {
-            for (Tangible tangible : items) {
 
-
-            if (tangible.getName().length() == name.length()) {
-                return tangible;
-
+        try {
+            for (Tangible item : items) {
+                if (item.getName().equalsIgnoreCase(name)) {
+                    return item;
+                }
             }
-
-
-        }}
+        } catch (Exception ignored) {
+            System.out.println("null item");
+        }
         return null;
-
     }
 
     /**
@@ -64,17 +61,12 @@ public class Backpack {
      */
     public boolean removeItem(Tangible item) {
         //TODO Complete the function
-        for (int i = 0; i < items.length; i++) {
-            for (Tangible tangible: items) {
-            int index = 2;
-                tangible = item;
-                items[0] = tangible;
-                tangible = items[0];
-            if (tangible.canUse(item))
-           {
-                return tangible.canTake();
-           }
-        }}
+        for (int i = 0; i < this.items.length; i++) {
+            if (this.items[i] == item) {
+                this.items[i] = null;
+                return true;
+            }
+        }
         return false;
     }
 
@@ -88,5 +80,10 @@ public class Backpack {
      */
     public void printItems() {
         //TODO Complete the function
-    }
+        for (int i = 0; i < items.length; i++) {
+
+
+            System.out.print("Here are the items in your backpack:" + items[i]);
+
+        }    }
 }
