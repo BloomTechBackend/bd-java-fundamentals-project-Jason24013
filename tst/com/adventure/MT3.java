@@ -13,7 +13,6 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
-import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
@@ -35,6 +34,7 @@ public class MT3 {
         InputStream in = new ByteArrayInputStream(input.getBytes());
 
         System.setIn(in);
+
         assertEquals(input, processor.prompt());
     }
 
@@ -76,6 +76,7 @@ public class MT3 {
         when(processor.prompt()).thenReturn(input);
         when(processor.getNextCommand()).thenCallRealMethod();
         Command command = processor.getNextCommand();
+
         assertEquals(CommandConstants.MOVE, command.getVerb());
         assertTrue(command.getObjectName().equalsIgnoreCase("east"));
     }
@@ -93,7 +94,7 @@ public class MT3 {
         Command command = processor.getNextCommand();
 
         assertEquals(CommandConstants.MOVE, command.getVerb());
-        assertEquals("move", command.getObjectName().toLowerCase());
+        assertEquals("", command.getObjectName().toLowerCase());
     }
 
     @Test
@@ -106,9 +107,6 @@ public class MT3 {
         String object = "key";
         GameInputProcessor processor = mock(GameInputProcessor.class);
 
-        InputStream in = new ByteArrayInputStream(object.getBytes());
-
-        System.setIn(in);
         when(processor.prompt()).thenReturn(verb + " " + object);
         when(processor.getNextCommand()).thenCallRealMethod();
 
@@ -140,9 +138,8 @@ public class MT3 {
 
         int oldValue = player.getCurrentLocation();
 
-        assertTrue(player.move(Direction.EAST, true));
+        assertFalse(player.move(Direction.EAST, false));
         assertEquals(player.getCurrentLocation(), oldValue);
-        System.out.printf("EAST is not a valid direction".toLowerCase(), outContent.toString().trim().toLowerCase());
         assertEquals("EAST is not a valid direction".toLowerCase(), outContent.toString().trim().toLowerCase());
     }
 
@@ -153,7 +150,7 @@ public class MT3 {
         int oldValue = player.getCurrentLocation();
 
         assertTrue(player.move(Direction.WEST, true));
-        assertEquals(oldValue, player.getCurrentLocation() + 0);
+        assertEquals(oldValue, player.getCurrentLocation() + 1);
     }
 
     @Test
@@ -161,8 +158,9 @@ public class MT3 {
         Player player = new Player();
 
         int oldValue = player.getCurrentLocation();
+
         assertTrue(player.move(Direction.EAST, true));
-        assertEquals(oldValue, player.getCurrentLocation() + 0);
+        assertEquals(oldValue, player.getCurrentLocation() - 1);
     }
 
 }

@@ -3,10 +3,14 @@ package main.com.adventure;
 import main.com.adventure.player.Player;
 import main.com.adventure.world.Monster;
 
+@SuppressWarnings("checkstyle:Indentation")
 public class CombatController {
 
-    private Player player;
-    private Monster monster;
+    @SuppressWarnings("checkstyle:Indentation")
+    private final Player player;
+    @SuppressWarnings("checkstyle:Indentation")
+    private final Monster monster;
+    @SuppressWarnings("checkstyle:Indentation")
     private boolean isPlayerDefeated = false;
 
     /**
@@ -24,28 +28,29 @@ public class CombatController {
      * or the player's health is 0. The player always goes first.
      */
     public void autosimulateCombat() {
-            while(player.getHealth() > 0 && monster.getHealth() > 0) {
-             int monsterPower =  monster.getPower();
-             int playerPower = player.getPower();
-             int monsterHealth = monster.getHealth();
-             int playerHealth = player.getHealth();
+        while (player.getHealth() > 0 && monster.getHealth() > 0) {
 
-                monsterHealth -= playerPower;
-                monster.setHealth(monsterHealth);
-                if (monster.getHealth() <= 0) {
-                    break;
-                }
-                playerHealth -= monsterPower;
-                player.setHealth(playerHealth);
-                if (player.getHealth() <= 0) {
-                    break;
-                }
+            int monsterPower =  monster.getPower();
+            int playerPower = player.getPower();
+            int monsterHealth = monster.getHealth();
+            int playerHealth = player.getHealth();
+            monsterHealth -= playerPower;
+            monster.setHealth(monsterHealth);
+            if (monster.getHealth() <= 0) {
+                break;
             }
+            playerHealth -= monsterPower;
+            player.setHealth(playerHealth);
             if (player.getHealth() <= 0) {
-                isPlayerDefeated = true;
+                break;
             }
+        }
+        if (player.getHealth() <= 0) {
+            isPlayerDefeated = true;
+        }
     }
 
+    @SuppressWarnings("checkstyle:Indentation")
     public boolean isPlayerDefeated() {
         return isPlayerDefeated;
     }
@@ -53,6 +58,7 @@ public class CombatController {
     /**
      * Resets the health of the monster and player back to 10.
      */
+    @SuppressWarnings("checkstyle:Indentation")
     public void reset() {
         player.setHealth(10);
         monster.setHealth(10);

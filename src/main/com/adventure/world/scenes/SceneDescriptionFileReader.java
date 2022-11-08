@@ -46,7 +46,7 @@ public class SceneDescriptionFileReader {
                 fileContent += line + "\n";
             }
 
-        }while (line != null);
+        } while (line != null);
         return  fileContent;
     }
 

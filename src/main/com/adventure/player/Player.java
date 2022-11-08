@@ -7,13 +7,15 @@ import main.com.adventure.world.objects.Weapon;
 import main.com.adventure.world.objects.keys.Key;
 
 public class Player {
+
     public int level = 5;
     private int currentLocationIndex = AppSettings.getStartingLocation();
-    private Key key;
-    private Shovel shovel;
+
+    private Backpack backpack = new Backpack();
 
     private int power = 1;
     private int health = 10;
+
     private String name;
 
 
@@ -21,26 +23,14 @@ public class Player {
      * Sprint 2 Module 1
      * Saves the player's name. This file should store the name so it can be referenced later. After setting the name,
      * inform the user that the name has been changed by saying "Your name is now {name}".
-     *
      * @param newName - the player's name that will be saved
      */
     public void setName(String newName) {
+
         name = newName;
-
-
-
-
-
-
-
-
-
-
-
+        System.out.println("Your name is now " + name);
 
     }
-
-
 
     /**
      * Sprint 2 Module 1
@@ -59,7 +49,7 @@ public class Player {
      * @return true if the player's level is enough to open the door.
      */
     public boolean canOpenDoor() {
-        return false;
+        return (float) level / 2 > 2;
     }
 
 
@@ -86,8 +76,20 @@ public class Player {
      */
     public boolean move(String direction, boolean isValidDirection) {
 
-        return isValidDirection;
+        if (isValidDirection) {
+            if (direction.equals("EAST")) {
+                currentLocationIndex++;
+            }
+            if (direction.equals("WEST")) {
+                currentLocationIndex--;
+            }
+            return true;
+        } else {
+            System.out.println(String.format("%s is not a valid direction", direction));
+            return false;
+        }
     }
+
 
     /**
      * Sprint 3 Module 2
@@ -97,7 +99,12 @@ public class Player {
      */
     public void setWeapon(Weapon item) {
         //TODO Complete this function in Sprint 3 Module 2
-        power = item.getPower();
+        int weaponPower = item.getPower();
+
+        if (weaponPower > this.level) {
+            this.power = weaponPower;
+        }
+
     }
 
     /**
@@ -109,11 +116,8 @@ public class Player {
     public Tangible getItem(String itemName) {
         //TODO Complete this function in Sprint 3 Module 3
 
-        return null;
+        return backpack.getItem(itemName);
     }
-
-
-
 
     /**
      * Sprint 3 Module 3
@@ -123,7 +127,8 @@ public class Player {
      */
     public Tangible removeItem(Tangible item) {
         //TODO Complete this function in Sprint 3 Module 3
-        return null;
+        this.backpack.removeItem(item);
+        return item;
     }
 
     /**
@@ -132,6 +137,7 @@ public class Player {
      */
     public void printItems() {
         //TODO Complete this function in Sprint 3 Module 3
+        this.backpack.printItems();
     }
 
     /**
@@ -141,22 +147,40 @@ public class Player {
      */
     public void addItem(Tangible item) {
         //TODO Complete this function
+        this.backpack.addItem(item);
     }
 
+    /**
+     * Adds item to backpack.
+     * @param item - item sent to backpack
+     */
     public void setKey(Key item) {
-        key = item;
+        this.backpack.addItem(item);
     }
 
-    public Key getKey() {
-        return key;
-    }
+    /**
+     *
+     * @param key string value of key.
+     * @return returns the key item from backpack
+     */
+    public Key getKey(String key) {
+        return (Key) this.backpack.getItem(key);    }
 
+    /**
+     * sets item as shovel.
+     * @param item item is a shovel
+     */
     public void setShovel(Shovel item) {
-        shovel = item;
+        this.backpack.addItem(item);
     }
 
-    public Shovel getShovel() {
-        return shovel;
+    /**
+     * returns a shovel.
+     * @param shovel item from shovels
+     * @return returns the shovel from backpack
+     */
+    public Shovel getShovel(String shovel) {
+        return (Shovel) this.backpack.getItem(shovel);
     }
 
     //////// DON'T CHANGE THE CODE BELOW. ///////////
