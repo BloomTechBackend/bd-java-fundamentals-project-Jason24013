@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.adventure.MT9" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-08T03:25:38" hostname="jason-Z690-AORUS-ELITE-AX-DDR4" time="0.017">
+<testsuite name="com.adventure.MT9" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-08T04:29:32" hostname="jason-Z690-AORUS-ELITE-AX-DDR4" time="0.016">
   <properties/>
-  <testcase name="testOmniDoorKey()" classname="com.adventure.MT9" time="0.017"/>
+  <testcase name="testOmniDoorKey()" classname="com.adventure.MT9" time="0.016"/>
   <system-out><![CDATA[The door is unlocked!
 The door is unlocked!
 The door is unlocked!
